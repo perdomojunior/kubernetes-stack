@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: redis-stack
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 6379
+  selector:
+    app: redis
+  type: ClusterIP
